@@ -1,3 +1,4 @@
+```
 > python .\euro2021.py
 Probability of team being qualified (2021-06-20)
 Pays-Bas : 100.0 %
@@ -24,3 +25,4 @@ Ecosse : 42.7 %
 Danemark : 28.4 %
 Macédoine du Nord : 16.7 %
 Turquie : 0.0 %
+```
