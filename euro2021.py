@@ -4,6 +4,46 @@ import datetime
 # Estimate the probability of each teams being qualified by 
 # Monte-Carlo simulation of the still unplayed matched
 
+def scores():
+    S = [[[0]*3 for i in range(4)] for j in range(6)]
+    # Group 1
+    S[0][0] = [0,0,1] # Turquie
+    S[0][1] = [3,3,1] # Italie
+    S[0][2] = [1,2,0] # Pays de Galles
+    S[0][3] = [1,0,3] # Suisse
+
+    # Group 2
+    S[1][0] = [0,1,-1] # Danemark
+    S[1][1] = [1,0,-1] # Finlande
+    S[1][2] = [3,2,-1] # Belgique
+    S[1][3] = [0,1,-1] # Russie
+
+    # Group 3
+    S[2][0] = [3,2,-1] # Pays-bas
+    S[2][1] = [2,2,-1] # Ukraine
+    S[2][2] = [3,0,-1] # Autriche
+    S[2][3] = [1,1,-1] # Macédoine du Nord
+
+    # Group 4 
+    S[3][0] = [1,0,-1] # Angleterre
+    S[3][1] = [0,1,-1] # Croatie
+    S[3][2] = [0,0,-1] # Ecosse
+    S[3][3] = [2,1,-1] # République tchèque
+
+    # Group 5
+    S[4][0] = [0,1,-1] # Espagne
+    S[4][1] = [0,1,-1] # Suède
+    S[4][2] = [1,1,-1] # Pologne
+    S[4][3] = [2,0,-1] # Slovaquie
+
+    # Group 6
+    S[5][0] = [0,1,-1] # Hongrie
+    S[5][1] = [3,2,-1] # Portugal
+    S[5][2] = [1,1,-1] # France
+    S[5][3] = [0,4,-1] # Allemagne
+
+    return S
+
 def match(P,S,p,d,e1,e2):
     # Returns P that keeps track of the points earned by each team during a match
     # S: score of each team in each of the 3 days (d)
@@ -49,43 +89,7 @@ qualified = [0]*24
 for t in range(n):
 
     P = [[0]*4 for i in range(6)]
-    S = [[[0]*3 for i in range(4)] for j in range(6)]
-    
-    # Group 1
-    S[0][0] = [0,0,1] # Turquie
-    S[0][1] = [3,3,1] # Italie
-    S[0][2] = [1,2,0] # Pays de Galles
-    S[0][3] = [1,0,3] # Suisse
-
-    # Group 2
-    S[1][0] = [0,1,-1]
-    S[1][1] = [1,0,-1]
-    S[1][2] = [3,2,-1]
-    S[1][3] = [0,1,-1]
-
-    # Group 3
-    S[2][0] = [3,2,-1]
-    S[2][1] = [2,2,-1]
-    S[2][2] = [3,0,-1]
-    S[2][3] = [1,1,-1]
-
-    # Group 4 
-    S[3][0] = [1,0,-1]
-    S[3][1] = [0,1,-1]
-    S[3][2] = [0,0,-1]
-    S[3][3] = [2,1,-1]
-
-    # Group 5
-    S[4][0] = [0,1,-1]
-    S[4][1] = [0,1,-1]
-    S[4][2] = [1,1,-1]
-    S[4][3] = [2,0,-1]
-
-    # Group 6
-    S[5][0] = [0,1,-1]
-    S[5][1] = [3,2,-1]
-    S[5][2] = [1,1,-1]
-    S[5][3] = [0,4,-1]
+    S = scores()
 
     # Random draw of still unplayed matches
     for p in range(6):
@@ -95,7 +99,7 @@ for t in range(n):
                     # Draw a score between 0 and 7 goals
                     S[p][e][d] = random.randint(0,7)
 
-    # Score played matched
+    #  Count points for each team
     for p in range(6):
         # Day 1
         P = match(P,S,p,0,0,1)
@@ -111,7 +115,7 @@ for t in range(n):
     rank = sorted(range(24), key=lambda k: Pf[k])
     for r in rank[8:24]:
         qualified[r] += 1
-    
+
 rank_ = sorted(range(24), key=lambda k: qualified[k])
 
 print("Probability of team being qualified ({})".format(datetime.date.today()))
