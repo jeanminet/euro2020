@@ -19,10 +19,10 @@ def scores():
     S[1][3] = [0,1,-1] # Russie
 
     # Group 3
-    S[2][0] = [3,2,-1] # Pays-bas
-    S[2][1] = [2,2,-1] # Ukraine
-    S[2][2] = [3,0,-1] # Autriche
-    S[2][3] = [1,1,-1] # Macédoine du Nord
+    S[2][0] = [3,2,3] # Pays-bas
+    S[2][1] = [2,2,0] # Ukraine
+    S[2][2] = [3,0,1] # Autriche
+    S[2][3] = [1,1,0] # Macédoine du Nord
 
     # Group 4 
     S[3][0] = [1,0,-1] # Angleterre

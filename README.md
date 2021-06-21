@@ -1,28 +1,28 @@
 ```
 > python .\euro2021.py
-Probability of team being qualified (2021-06-20)
+Probability of team being qualified (2021-06-21)
+Autriche : 100.0 %
 Pays-Bas : 100.0 %
 Belgique : 100.0 %
 Pays de Galles : 100.0 %
 Italie : 100.0 %
-République tchèque : 98.7 %
-Angleterre : 98.4 %
-Suisse : 98.4 %
-France : 97.7 %
-Suède : 97.1 %
-Portugal : 70.2 %
-Allemagne : 66.4 %
-Finlande : 63.0 %
-Slovaquie : 62.3 %
-Ukraine : 62.0 %
-Autriche : 60.8 %
-Russie : 56.5 %
-Espagne : 49.0 %
-Croatie : 45.2 %
-Hongrie : 44.0 %
-Pologne : 42.8 %
-Ecosse : 42.7 %
-Danemark : 28.4 %
-Macédoine du Nord : 16.7 %
+République tchèque : 99.4 %
+Suisse : 99.4 %
+Angleterre : 99.0 %
+France : 98.6 %
+Suède : 97.6 %
+Portugal : 69.0 %
+Allemagne : 68.0 %
+Slovaquie : 62.0 %
+Finlande : 59.9 %
+Russie : 55.5 %
+Espagne : 50.2 %
+Pologne : 43.9 %
+Ecosse : 43.7 %
+Croatie : 43.6 %
+Hongrie : 43.4 %
+Ukraine : 36.0 %
+Danemark : 30.8 %
+Macédoine du Nord : 0.0 %
 Turquie : 0.0 %
 ```
