@@ -13,10 +13,10 @@ def scores():
     S[0][3] = [1,0,3] # Suisse
 
     # Group 2
-    S[1][0] = [0,1,-1] # Danemark
-    S[1][1] = [1,0,-1] # Finlande
-    S[1][2] = [3,2,-1] # Belgique
-    S[1][3] = [0,1,-1] # Russie
+    S[1][0] = [0,1,4] # Danemark
+    S[1][1] = [1,0,0] # Finlande
+    S[1][2] = [3,2,2] # Belgique
+    S[1][3] = [0,1,1] # Russie
 
     # Group 3
     S[2][0] = [3,2,3] # Pays-bas
@@ -73,7 +73,7 @@ def flatten(X):
             Xf[4*i+j] = X[i][j]
     return Xf
 
-n = 10000
+n = 1000000
 
 # 6 groups of 4 teams
 G = [[]*4 for i in range(6)]
@@ -96,8 +96,8 @@ for t in range(n):
         for e in range(4):
             for d in range(3):
                 if S[p][e][d] == -1:
-                    # Draw a score between 0 and 7 goals
-                    S[p][e][d] = random.randint(0,7)
+                    # Draw a score between 0 and 10 goals
+                    S[p][e][d] = random.randint(0,10)
 
     #  Count points for each team
     for p in range(6):
@@ -120,4 +120,4 @@ rank_ = sorted(range(24), key=lambda k: qualified[k])
 
 print("Probability of team being qualified ({})".format(datetime.date.today()))
 for i in rank_[::-1]:
-    print("{} : {:.1f} %".format(Gf[i], qualified[i] / n * 100))
+    print("{} : {:.3f} %".format(Gf[i], qualified[i] / n * 100))
